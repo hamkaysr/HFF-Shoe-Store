@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <div id="checkout-info"></div>
+
+        <form action="payment_success.html" method="GET">
+            <div class="form-group">
+                <label for="name">Nama Pembeli:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <input type="hidden" id="product" name="product">
+            <input type="hidden" id="price" name="price">
+            <button type="submit">Bayar</button>
+        </form>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        const price = urlParams.get('price');
+
+        document.getElementById('checkout-info').innerHTML = `
+            <p>Produk: <strong>${product}</strong></p>
+            <p>Harga: Rp ${parseInt(price).toLocaleString('id-ID')}</p>
+        `;
+        document.getElementById('product').value = product;
+        document.getElementById('price').value = price;
+    </script>
+</body>
+</html>

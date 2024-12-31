@@ -1,0 +1,42 @@
+<body>
+    <section class="container">
+        <div class="login-container">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <link rel="stylesheet" href="login.css">
+                
+                <h1 class="opacity">LOGIN</h1>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="USERNAME" />
+                    <input type="password " id="password" placeholder="PASSWORD" />
+                    <button class="opacity">SUBMIT</button>
+                </form>
+                <div class="register-forget opacity">
+                   <center><a href="forgot.html">username sama pass disini</a></center>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+    <script>
+        // JavaScript untuk menangani login
+        const form = document.getElementById('loginForm');
+        form.addEventListener('submit', function(e) {
+          e.preventDefault(); // Mencegah refresh halaman
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+    
+          // Validasi sederhana (sesuaikan dengan backend jika ada)
+          if (username === "hamkaysr" && password === "123") {
+            
+            document.location.href = "index.html"; // Redirect ke halaman jualan
+          }else if (username === "rian" && password === "123") {
+            
+            document.location.href = "index.html"; // Redirect ke halaman jualan
+           } else {
+            alert("Username atau password salah!");
+          }
+        });
+      </script>
+</body>

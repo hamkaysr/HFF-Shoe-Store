@@ -1,0 +1,371 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Banner */
+.banner {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to right, #1fbb27, #000);
+  background-image: -webkit-linear-gradient();
+  color: white;
+}
+
+.banner button {
+  background: #0abb0a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Product Gallery */
+.product-gallery {
+  padding: 20px;
+  background: #ffffff;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  padding: 0px;
+  margin: 0px;
+  border: 0px solid #ddd;
+  text-align: center;
+}
+
+.product-item img {
+  width: 200px;
+  height: auto;
+}
+
+/* Promo Section */
+.promos {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+.promo-item {
+  background: #444;
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #333;
+  color: white;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 5px 10px;
+  border: none;
+  background-color: rgb(30, 202, 81);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Button styling */
+.filter-btn, .cart-btn {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter-btn {
+  background-color: #555;
+  color: white;
+}
+
+.cart-btn {
+  background-color: #ff5722;
+  color: white;
+}
+
+/* Styling Section Produk */
+.products {
+  padding: 30px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Grid Produk */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Kartu Produk */
+.product-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #555;
+}
+
+.product-card .price {
+  font-size: 16px;
+  color: #ff5722;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Tombol Add to Cart */
+.product-card .add-to-cart {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+  background-color: #e64a19;
+}
+
+/* Styling Section Produk */
+.products {
+  padding: 30px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Grid Produk */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Kartu Produk */
+.product-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #555;
+}
+
+.product-card .price {
+  font-size: 16px;
+  color: #ff5722;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Tombol Add to Cart */
+.product-card .add-to-cart {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+  background-color: #e64a19;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.logout-btn {
+  background-color: #15ac36; /* Warna merah */
+  color: white; /* Warna teks */
+  padding: 10px 20px; /* Padding */
+  text-decoration: none; /* Hilangkan garis bawah */
+  border-radius: 5px; /* Sudut melengkung */
+  font-weight: bold; /* Teks tebal */
+  transition: background-color 0.3s ease; /* Efek transisi */
+}
+
+.logout-btn:hover {
+  background-color: #e60000; /* Warna saat dihover */
+}

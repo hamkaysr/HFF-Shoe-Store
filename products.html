@@ -1,0 +1,178 @@
+<link rel="stylesheet" href="products.css">
+<section class="products">
+  <button class="btn-keranjang" onclick="goToCart()">Lihat Keranjang</button>
+    </div>
+
+    <script>
+        // Arahkan ke halaman keranjang
+        function goToCart() {
+            window.location.href = "keranjang.html";
+        }
+    </script>
+</body>
+</html>
+  <h2>Semua Produk</h2>
+</div>
+  <div class="product-grid">
+    <!-- Card Produk 1 -->
+    <div class="product-card">
+      <img src="img/sepatu1.png" alt="Product 1">
+      <h3>Adidas-Grey</h3>
+      <p class="price">Rp 1.150.000</p>
+      <button onclick="addToCart('Adidas-Grey', 1150000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Adidas-Grey&price=1150000" class="btn">Beli Sekarang</a>
+    </div>
+
+    <!-- Card Produk 2 -->
+    <div class="product-card">
+      <img src="img/sepatu2.png" alt="Product 2">
+      <h3>Puma-Red</h3>
+      <p class="price">Rp 849.000</p>
+      <button onclick="addToCart('Puma-Red', 849000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Puma-Red&price=849000" class="btn">Beli Sekarang</a>
+    </div>
+
+    <!-- Card Produk 3 -->
+    <div class="product-card">
+      <img src="img/sepatu3.jpeg" alt="Product 3">
+      <h3>Straye Logan</h3>
+      <p class="price">Rp 900.000</p>
+      <button onclick="addToCart('Straye Logan', 900000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Straye Logan&price=900000" class="btn">Beli Sekarang</a>
+    </div>
+
+    <!-- Card Produk 4 -->
+    <div class="product-card">
+      <img src="img/sepatu4.jpeg" alt="Product 4">
+      <h3>Flash - White Pink</h3>
+      <p class="price">Rp 800.000</p>
+      <button onclick="addToCart('Flash-White Pink', 800000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Flash-White Pink&price=800000" class="btn">Beli Sekarang</a>
+    </div>
+    
+    <!-- Card Produk 5 -->
+    <div class="product-card">
+      <img src="img/sepatu5.jpeg" alt="Product 5">
+      <h3>Flash - White Blue</h3>
+      <p class="price">Rp 850.000</p>
+      <button onclick="addToCart('Flash-White Blue', 850000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Flash-White Blue&price=850000" class="btn">Beli Sekarang</a>
+    </div>
+
+    <!-- Card Produk 6 -->
+    <div class="product-card">
+      <img src="img/sepatu6.jpeg" alt="Product 6">
+      <h3>Flash - White Red</h3>
+      <p class="price">Rp 830.000</p>
+      <button onclick="addToCart('Flash-White Red', 830000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Flash-White Red&price=830000" class="btn">Beli Sekarang</a>
+    </div>
+
+    <!-- Card Produk 7 -->
+    <div class="product-card">
+      <img src="img/sepatu7.jpeg" alt="Product 7">
+      <h3>Sneakers</h3>
+      <p class="price">Rp 700.000</p>
+      <button onclick="addToCart('Sneakers', 700000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Sneakers&price=700000" class="btn">Beli Sekarang</a>
+
+    </div>
+
+    <!-- Card Produk 8 -->
+    <div class="product-card">
+      <img src="img/sepatu8.jpeg"alt="Product 8">
+      <h3>Gradation</h3>
+      <p class="price">Rp 980.000</p>
+      <button onclick="addToCart('Gradation', 980000)">Tambah ke Keranjang</button>
+      <a href="pembayaran.html?name=Gradation&price=980000" class="btn">Beli Sekarang</a>
+
+    </div>
+
+
+  </div>
+</section>
+<script>
+  // Ambil parameter dari URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get('search') ? urlParams.get('search').toLowerCase() : '';
+
+  const products = document.querySelectorAll('.product-item');
+  let hasResults = false;
+
+  // Filter produk berdasarkan pencarian
+  products.forEach(product => {
+      const name = product.getAttribute('data-name').toLowerCase();
+      if (name.includes(searchQuery)) {
+          product.style.display = 'block';
+          hasResults = true;
+      } else {
+          product.style.display = 'none';
+      }
+  });
+
+  // Tampilkan pesan jika tidak ada hasil
+  const noResults = document.getElementById('no-results');
+  if (noResults) {
+      noResults.style.display = hasResults ? 'none' : 'block';
+  }
+</script>
+<p id="no-results" style="display: none; text-align: center; color: red;">Produk tidak ditemukan.</p>
+
+
+<script>
+  const cart = [];
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotalContainer = document.getElementById('cart-total');
+
+  function addToCart(productName, price) {
+      // Periksa apakah produk sudah ada di keranjang
+      const existingProduct = cart.find(item => item.name === productName);
+      if (existingProduct) {
+          existingProduct.quantity++;
+      } else {
+          cart.push({ name: productName, price, quantity: 1 });
+      }
+      renderCart();
+  }
+
+  function removeFromCart(productName) {
+      const productIndex = cart.findIndex(item => item.name === productName);
+      if (productIndex !== -1) {
+          cart.splice(productIndex, 1);
+      }
+      renderCart();
+  }
+
+  function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+          const itemElement = document.createElement('div');
+          itemElement.className = 'cart-item';
+          itemElement.innerHTML = `
+              <p>${item.name} (x${item.quantity}) - Rp${item.price * item.quantity}</p>
+              <button onclick="removeFromCart('${item.name}')">Hapus</button>
+          `;
+          cartItemsContainer.appendChild(itemElement);
+          total += item.price * item.quantity;
+      });
+
+      cartTotalContainer.textContent = total;
+  }
+</script>
+
+<script>
+  function addToCart(productName, productPrice) {
+      // Ambil keranjang dari localStorage (atau buat array kosong jika tidak ada)
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+      // Tambahkan produk ke keranjang
+      cart.push({ name: productName, price: productPrice });
+      
+      // Simpan kembali ke localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
+      alert(productName + " telah ditambahkan ke keranjang!");
+  }
+</script>

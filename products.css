@@ -1,0 +1,232 @@
+.btn-keranjang {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-keranjang:hover {
+  background-color: #1eb332;
+  transform: scale(1.05);
+}
+
+.btn-keranjang:active {
+  background-color: #15d84f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+}
+/* Gaya Tombol Belanja Sekarang */
+/* Gaya Tombol Belanja Sekarang */
+.btn-belanja {
+  background-color: #e4eee5; /* Warna latar oranye */
+  color: rgb(8, 8, 8); /* Warna teks putih */
+  font-size: 18px; /* Ukuran font */
+  font-weight: bold; /* Teks tebal */
+  padding: 10px 20px; /* Ruang dalam tombol */
+  border: none; /* Hapus border */
+  border-radius: 8px; /* Sudut membulat */
+  text-transform: uppercase; /* Huruf kapital semua */
+  cursor: pointer; /* Ubah kursor menjadi pointer */
+  transition: all 0.3s ease; /* Efek transisi halus */
+  box-shadow: 0 5px 10px rgba(19, 19, 19, 0.3); /* Efek bayangan */
+}
+
+/* Efek hover */
+.btn-belanja:hover {
+  background-color: #18d331; /* Warna lebih gelap saat dihover */
+  transform: scale(1.05); /* Sedikit membesar */
+}
+
+/* Efek klik */
+.btn-belanja:active {
+  background-color: #0ec226; /* Warna saat diklik */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Bayangan mengecil */
+  transform: scale(1); /* Kembali ke ukuran semula */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Styling Section Produk */
+.products {
+    padding: 30px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .products h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Grid Produk */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Kartu Produk */
+  .product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card h3 {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #555;
+  }
+  
+  .product-card .price {
+    font-size: 16px;
+    color: #ff5722;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  /* Tombol Add to Cart */
+  .product-card button {
+    background-color: #007bff; /* Warna biru */
+    color: white; /* Warna teks */
+    border: none; /* Menghilangkan border */
+    padding: 10px 15px; /* Padding dalam tombol */
+    border-radius: 5px; /* Membuat sudut tombol melengkung */
+    font-size: 16px; /* Ukuran teks */
+    cursor: pointer; /* Mengubah kursor saat di-hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animasi saat tombol di-hover */
+}
+
+.product-card button:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat di-hover */
+    transform: scale(1.05); /* Sedikit memperbesar tombol saat di-hover */
+}
+
+.product-card button:active {
+    background-color: #004085; /* Warna lebih gelap saat ditekan */
+    transform: scale(1); /* Kembali ke ukuran normal */
+}
+  .product-card .add-to-cart {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .product-card .add-to-cart:hover {
+    background-color: #e64a19;
+  }
+
+  /* Styling untuk Keranjang Belanja */
+.cart {
+  background-color: #f8f9fa; /* Warna latar belakang terang */
+  border: 1px solid #ddd; /* Border halus */
+  padding: 20px;
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  margin-top: 20px;
+}
+
+.cart h2 {
+  font-size: 24px;
+  color: #333; /* Warna teks header */
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.cart-item {
+  background-color: #ffffff; /* Latar belakang item putih */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item p {
+  font-size: 16px;
+  color: #333; /* Warna teks item */
+}
+
+.cart-item button {
+  background-color: #dc3545; /* Warna merah untuk hapus */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.cart-item button:hover {
+  background-color: #c82333; /* Warna lebih gelap saat hover */
+}
+
+.cart h3 {
+  font-size: 20px;
+  color: #333;
+  text-align: right; /* Total di sebelah kanan */
+  font-weight: bold;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #28a745; /* Warna hijau */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #218838; /* Warna hijau gelap saat hover */
+  transform: scale(1.05); /* Membesar sedikit saat hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  background-color: #1e7e34; /* Warna lebih gelap saat ditekan */
+  transform: scale(0.95); /* Mengecil sedikit saat ditekan */
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}

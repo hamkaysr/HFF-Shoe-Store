@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shoe Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="products.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" target="menu-utama">Beranda</a></li>
+        <li><a href="products.html">Produk</a></li>
+        <li><a href="bantuan.html">Bantuan</a></li>
+        <a href="login.html" class="logout-btn">Keluar</a> <!-- Kembali ke halaman login -->
+      </ul>
+    </nav>
+  </div>  
+</div>
+    <div class="actions">
+        <form class="search-bar">
+            <input type="text" placeholder="Cari...">
+            <button type="submit" class="btn">Cari</button>                 
+        </form>
+        <a href="keranjang.html" class="btn">Keranjang</a>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h1>YSR</h1>
+    <p>Where Style Meets Comfort</p>
+    <a href="products.html" class="btn">Belanja Sekarang</a>
+  </section>
+
+  <!-- Product Gallery -->
+  <section class="product-gallery">
+    <h2>Produk Terpopuler</h2>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="img/sepatu1.png" alt="Product 1">
+        <p>Adidas-Grey</p>
+        <p>Rp 1.150.000</p>
+      </div>
+      <div class="product-item">
+        <img src="img/sepatu2.png" alt="Product 2">
+        <p>Puma-Red</p>
+        <p>Rp 849.000</p>
+      </div>
+      <div class="product-item">
+        <img src="img/sepatu3.jpeg" alt="Product 2">
+        <p>Straye Logan</p>
+        <p>Rp 900.000</p>
+      <!-- Tambahkan produk lainnya -->
+    </div>
+  </section>
+
+  <!-- Additional Sections -->
+  <section class="promos">
+    <a href="darionewsneakers.html" class="promo-item">Dario-New Sneakers</a>
+    <a href="comingsoon.html" class="promo-item">Coming Soon</a>
+    <a href="coolshoes.html" class="promo-item">Cool Shoes</a>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Tentang Kami</h4>
+            <p>Kami menyediakan produk terbaik dengan kualitas premium untuk kebutuhan Anda.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Kontak Layanan</h4>
+            <ul>
+                <li>Email: hamkaysr77@gmail.com</li>
+                <li>Telepon: +62 838 0863 3312</li>
+                <li>Kampus: STT Wastukancana</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Ikuti Kami</h4>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; Kelompok 5 Web Dasar Pagi B.</p>
+    </div>
+</footer>
+<script>
+  const cart = [];
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotalContainer = document.getElementById('cart-total');
+  const searchForm = document.querySelector(".search-bar");
+  const searchInput = document.querySelector("input");
+
+  function addToCart(productName, price) {
+      // Periksa apakah produk sudah ada di keranjang
+      const existingProduct = cart.find(item => item.name === productName);
+      if (existingProduct) {
+          existingProduct.quantity++;
+      } else {
+          cart.push({ name: productName, price, quantity: 1 });
+      }
+      renderCart();
+  }
+
+  function removeFromCart(productName) {
+      const productIndex = cart.findIndex(item => item.name === productName);
+      if (productIndex !== -1) {
+          cart.splice(productIndex, 1);
+      }
+      renderCart();
+  }
+
+  function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+          const itemElement = document.createElement('div');
+          itemElement.className = 'cart-item';
+          itemElement.innerHTML = `
+              <p>${item.name} (x${item.quantity}) - Rp${item.price * item.quantity}</p>
+              <button onclick="removeFromCart('${item.name}')">Hapus</button>
+          `;
+          cartItemsContainer.appendChild(itemElement);
+          total += item.price * item.quantity;
+      });
+
+      cartTotalContainer.textContent = total;
+  }
+
+</script>
+</body>
+</html>
